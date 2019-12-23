@@ -71,4 +71,4 @@ export const DummyData = [
         description: 'loren ipsum',
         status: 'done'
     },
-    ];
+];

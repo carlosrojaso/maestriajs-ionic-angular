@@ -1,18 +1,25 @@
 <app-header></app-header>
+<ion-content>
 <ion-list>
   <ion-item-sliding *ngFor="let item of items">
     <ion-item>
       <ion-label class="ion-text-wrap">
         <ion-text color="primary">
-          <h3>note</h3>
+          <h3>{{item.name}}</h3>
         </ion-text>
-        <p>loren ipsum</p>
+        <p>{{item.description}}</p>
       </ion-label>
   </ion-item>
     <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">edit</ion-item-option>
-      <ion-item-option color="warning" (click)="unread(item)">delete</ion-item-option>
+      <ion-item-option (click)="edit(item.id)">edit</ion-item-option>
+      <ion-item-option color="warning" (click)="delete(item.id)">delete</ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-list>
-<app-footer></app-footer>
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openDialog()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<app-footer [titleFooter]="title"></app-footer>

@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { AddformComponent } from '../addform/addform.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FooterComponent } from '../footer/footer.component';
       }
     ])
   ],
-  declarations: [HomePage, HeaderComponent, FooterComponent]
+  declarations: [HomePage, HeaderComponent, FooterComponent, AddformComponent],
+  entryComponents: [AddformComponent]
 })
 export class HomePageModule {}
