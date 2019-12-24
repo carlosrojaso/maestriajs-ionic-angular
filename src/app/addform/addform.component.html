@@ -37,7 +37,7 @@
   </div>
 </ion-item>
 <ion-item>
-  <ion-button color="primary" [disabled]="(description.errors || name.errors)" (click)="save()">Add</ion-button>
+  <ion-button color="primary" [disabled]="(description.errors || name.errors)" (click)="save()">{{(!isEditing ? 'Add': 'Edit')}}</ion-button>
   <ion-button color="secondary" (click)="cancel()">Cancel</ion-button>
 </ion-item>
 </form>

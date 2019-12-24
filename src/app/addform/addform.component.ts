@@ -8,18 +8,30 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class AddformComponent implements OnInit {
   newTask: any = {};
+  isEditing = false;
 
   constructor(
-    public modalController: ModalController
+    public modalController: ModalController,
+    private navParams: NavParams
     ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.navParams && this.navParams.get('taskToEdit')) {
+      this.isEditing = true;
+      this.newTask = this.navParams.get('taskToEdit');
+    }
+  }
 
   async cancel() {
     await this.modalController.dismiss({action: 'dismiss'});
   }
 
   async save() {
-    await this.modalController.dismiss({action: 'save', result: this.newTask});
+    if (!this.isEditing) {
+      await this.modalController.dismiss({action: 'save', result: this.newTask});
+    } else {
+      await this.modalController.dismiss({action: 'edit', result: this.newTask});
+    }
+    this.isEditing = false;
   }
 }
