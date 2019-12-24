@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ShortenerPipe } from '../shortener.pipe';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
-  exports: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, ShortenerPipe],
+  exports: [HeaderComponent, FooterComponent, ShortenerPipe],
   imports: [
     CommonModule,
     IonicModule,
