@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 import { HomePage } from './home.page';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 import { AddformComponent } from '../addform/addform.component';
 
 @NgModule({
@@ -14,6 +13,7 @@ import { AddformComponent } from '../addform/addform.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: '',
@@ -21,7 +21,7 @@ import { AddformComponent } from '../addform/addform.component';
       }
     ])
   ],
-  declarations: [HomePage, HeaderComponent, FooterComponent, AddformComponent],
+  declarations: [HomePage, AddformComponent],
   entryComponents: [AddformComponent]
 })
 export class HomePageModule {}
